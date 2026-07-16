@@ -1,0 +1,645 @@
+/* =====================================
+   BIRTHDAY GALLERY WEBSITE
+   STYLE SHEET
+===================================== */
+
+
+/* GOOGLE RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#ffffff;
+
+    color:#222;
+
+    overflow-x:hidden;
+
+}
+
+
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+
+a{
+
+    text-decoration:none;
+
+}
+
+
+
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    background:rgba(255, 255, 255, 0.85);
+
+    backdrop-filter:blur(15px);
+
+    z-index:1000;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+nav{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    height:80px;
+
+    padding:0 30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+
+.logo{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:#06168e;
+
+}
+
+
+
+nav a{
+
+    color:#8a6b04;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+nav a:hover{
+
+    color:#070c85;
+
+}
+
+
+
+
+
+
+/* =====================================
+   HERO SECTION
+===================================== */
+
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:120px 20px 50px;
+
+    background:
+
+    linear-gradient(
+        rgba(255,255,255,.85),
+        rgba(255,255,255,.9)
+    ),
+
+    url("images/file_00000000b37071f4be02816e3e555e32.png");
+
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+
+
+.hero-content{
+
+    max-width:800px;
+
+}
+
+
+
+.hero span{
+
+    display:inline-block;
+
+    padding:10px 25px;
+
+    background:#0f318e;
+
+    color:#f1f0ec;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.hero h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:70px;
+
+    line-height:1.2;
+
+    color:#111;
+
+}
+
+
+
+.hero h2{
+
+    font-size:35px;
+
+    color:#947305;
+
+    margin:20px 0;
+
+}
+
+
+
+.hero p{
+
+    font-size:18px;
+
+    color:#03155c;
+
+    max-width:650px;
+
+    margin:auto;
+
+}
+
+
+
+.button{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    padding:15px 40px;
+
+    background:#092983;
+
+    color:white;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+.button:hover{
+
+    transform:translateY(-5px);
+
+    background:#b8941f;
+
+}
+
+
+
+
+
+
+
+/* =====================================
+   SECTION TITLE
+===================================== */
+
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+
+.section-title h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:45px;
+
+}
+
+
+
+.section-title p{
+
+    color:#777;
+
+}
+
+
+
+
+
+/* =====================================
+   GALLERY
+===================================== */
+
+
+.gallery-section{
+
+    padding:100px 30px;
+
+}
+
+
+
+.gallery{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+
+
+.photo-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+
+
+.photo-card img{
+
+    height:400px;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+
+
+.photo-card:hover img{
+
+    transform:scale(1.1);
+
+}
+
+
+
+
+
+.photo-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+
+
+.photo-card:hover .photo-overlay{
+
+    opacity:1;
+
+}
+
+
+
+
+
+.photo-overlay button,
+
+.photo-overlay a{
+
+    border:none;
+
+    background:#083582;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+/* =====================================
+   IMAGE VIEWER
+===================================== */
+
+
+#viewer{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.95);
+
+    display:none;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:2000;
+
+    padding:20px;
+
+}
+
+
+
+#viewer img{
+
+    max-width:90%;
+
+    max-height:75vh;
+
+    object-fit:contain;
+
+    border-radius:20px;
+
+}
+
+
+
+#viewer span{
+
+    position:absolute;
+
+    top:30px;
+
+    right:40px;
+
+    font-size:50px;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+
+
+#downloadButton{
+
+    margin-top:30px;
+
+    padding:15px 35px;
+
+    background:#d4af37;
+
+    color:white;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+
+footer{
+
+    background:#111;
+
+    color:white;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+
+
+footer h3{
+
+    font-family:'Playfair Display',serif;
+
+    color:#d4af37;
+
+    font-size:30px;
+
+}
+
+
+footer p{
+
+    margin:15px 0;
+
+    color:#ddd;
+
+}
+
+
+
+
+
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+
+@media(max-width:768px){
+
+
+    .hero h1{
+
+        font-size:45px;
+
+    }
+
+
+    .hero h2{
+
+        font-size:28px;
+
+    }
+
+
+    .section-title h2{
+
+        font-size:35px;
+
+    }
+
+
+    nav{
+
+        padding:0 20px;
+
+    }
+
+
+    .gallery-section{
+
+        padding:70px 20px;
+
+    }
+
+
+    .photo-card img{
+
+        height:350px;
+
+    }
+
+
+}
+
+
+
+
+@media(max-width:480px){
+
+
+    .hero h1{
+
+        font-size:38px;
+
+    }
+
+
+    .hero p{
+
+        font-size:15px;
+
+    }
+
+
+    .photo-overlay{
+
+        opacity:1;
+
+        background:rgba(0,0,0,.25);
+
+    }
+
+
+}
